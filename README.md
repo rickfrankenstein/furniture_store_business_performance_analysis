@@ -59,3 +59,38 @@ api.authenticate()
 # Download dataset
 dataset = 'your-dataset-name'  # Replace with your dataset name
 api.dataset_download_files(dataset, path='path-to-save-dataset', unzip=True)
+## Dataset Overview
+The dataset consists of sales and customer data from a USA-based multipurpose store, covering the years 2022 and 2023. This data includes various features that provide detailed information on sales transactions, customer segments, product categories, and more.
+
+### Schema of the Dataset
+| Column Name      | Data Type |
+|------------------|-----------|
+| order_id         | int64     |
+| order_date       | object    |
+| ship_mode        | object    |
+| segment          | object    |
+| country          | object    |
+| city             | object    |
+| state            | object    |
+| postal_code      | int64     |
+| region           | object    |
+| category         | object    |
+| sub_category     | object    |
+| product_id       | object    |
+| cost_price       | int64     |
+| list_price       | int64     |
+| quantity         | int64     |
+| discount_percent | int64     |
+| discount         | float64   |
+| sale_price       | float64   |
+| profit           | float64   |
+| total_sale       | float64   |
+| total_profit     | float64   |
+
+### Key Features
+- **Order Details**: Information about each order, including order ID, date, and ship mode.
+- **Customer Segmentation**: Data on customer segments, helping to identify and analyze different customer groups.
+- **Geographical Data**: Includes details on country, city, state, and region.
+- **Product Information**: Details on product categories and sub-categories.
+- **Pricing and Discounts**: Information on cost price, list price, discounts, and sale price.
+- **Sales and Profit**: Data on sales amount, profit, and other financial metrics.
