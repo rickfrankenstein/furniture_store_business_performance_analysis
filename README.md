@@ -51,7 +51,7 @@ import pandas as pd
 df = pd.read_csv('data/sales_data.csv')
 print(df.head())
 
-  
+```  
 2. **Download Dataset**: Use the Kaggle API to download the dataset.
 3. **Unzip Dataset**: Unzip the downloaded dataset for further processing.
 
