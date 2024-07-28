@@ -190,4 +190,18 @@ Once the data is cleaned, the next step is to upload it into a MySQL database fo
    df.to_sql('df_orders', con=conn , index=False, if_exists = 'append')
    ```
 
+## 5. Exploratory Data Analysis (EDA)
 
+Exploratory Data Analysis (EDA) is a crucial step to understand the underlying patterns and relationships within the dataset. For this project, EDA was performed using MySQL Workbench by executing SQL queries to answer key business questions. Below are the key questions, the SQL queries used to address them, and snapshots of the query outputs.
+
+### Key Questions and SQL Queries
+- **Sales Analysis**
+  What are the total sales over different months?
+  ```sql
+  SELECT DATE_FORMAT(order_date, "%Y %m") AS month, SUM(total_sale) AS total_sales
+  FROM df_orders
+  GROUP BY month
+  ORDER BY month;
+  ```
+  ![Sales over diff months](images/monthly_sales.png)
+   
