@@ -24,3 +24,14 @@ The primary objective of this project is to analyze business performance indexes
 - Are there seasonal variations in sales and profitability?
 - Which sub-categories have the highest and lowest order quantities?
 - How do different levels of discount affect sales volume?
+### Dataset Source
+The dataset used for this analysis is sourced from Kaggle, a platform known for its diverse and high-quality datasets. The data encompasses various aspects of sales and customer behavior from a USA-based furniture store, providing a robust foundation for detailed analysis.
+
+### Tools and Technologies Used
+- **Data Collection**: Jupyter Notebook, Kaggle API
+- **Data Cleaning**: Pandas library in Python, Jupyter Notebook
+- **Data Loading**: SQLAlchemy, ODBC connector driver, MySQL Workbench
+- **Exploratory Data Analysis (EDA)**: MySQL 
+- **Data Visualization**: Power BI
+
+By leveraging these tools and technologies, we have conducted a thorough analysis to uncover valuable insights that can drive business growth and enhance customer satisfaction.
