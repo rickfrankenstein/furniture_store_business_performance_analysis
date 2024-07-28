@@ -196,7 +196,7 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
 
 ### Key Questions and SQL Queries
 - **Sales Analysis**
-  What are the total sales over different months?
+  1. What are the total sales over different months?
   ```sql
   SELECT DATE_FORMAT(order_date, "%Y %m") AS month, SUM(total_sale) AS total_sales
   FROM df_orders
@@ -205,7 +205,7 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   ```
   ![Sales over diff months](images/monthly_sales.png)
    
-  Which regions have the highest and lowest sales?
+  2. Which regions have the highest and lowest sales?
   ```sql
   SELECT region, SUM(total_sale) AS total_sales
   FROM furniture.df_orders
@@ -220,7 +220,7 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   ORDER BY total_sales 
   LIMIT 1;
   ```
-  How do sales vary by ship mode and segment?
+  3. How do sales vary by ship mode and segment?
   ```sql
   SELECT ship_mode, segment, SUM(revenue) AS sales
   FROM furniture.df_orders
@@ -229,13 +229,13 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   ORDER BY ship_mode;
   ```
 - **Profitability Analysis**
-  Which regions are the most and least profitable?
+  4. Which regions are the most and least profitable?
   ```sql
   SELECT region, SUM(gross_profit) total_profit
   FROM furniture.df_orders
   GROUP BY region;
   ```
-  What is the impact of discounts on profit margins?
+  5. What is the impact of discounts on profit margins?
   ```sql
   SELECT discount, AVG(profit / (sale_price * quantity)) AS avg_profit_margin
   FROM furniture.df_orders
@@ -243,13 +243,13 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   ORDER BY discount;
   ```
 - **Customer Insights**
-  Which customer segments generate the most revenue?
+  6. Which customer segments generate the most revenue?
   ```sql
   SELECT segment, SUM(total_sale) AS total_revenue
   FROM furniture.df_orders
   GROUP BY segment;
   ```
-  How does the average order size and frequency of orders vary across different segments?
+  7. How does the average order size and frequency of orders vary across different segments?
   ```sql
   SELECT segment, AVG(quantity) AS avg_order_size, COUNT(order_id) AS order_count
   FROM your_table_name
@@ -257,14 +257,14 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   ORDER BY order_count DESC;
   ```
 - **Market Trends**
-  What are the trends in sales and profit over time?
+  8. What are the trends in sales and profit over time?
   ```sql
   SELECT  DATE_FORMAT(order_date, "%Y %m") AS month, SUM(total_sale) AS sales, SUM(profit) AS profit
   FROM furniture.df_orders
   GROUP BY month
   ORDER BY month;
   ```
-  Are there seasonal variations in sales and profitability?
+  9. Are there seasonal variations in sales and profitability?
   ```sql
   SELECT MONTH(order_date) AS month, SUM(total_sale) AS sales, SUM(total_profit) AS profit
   FROM furniture.df_orders
@@ -272,7 +272,7 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   ORDER BY month;
   ```
 - **Inventory and Supply Chain**
-  Which Sub-category have the highest and lowest order quantities?
+  10. Which Sub-category have the highest and lowest order quantities?
   ```sql
   SELECT sub_category, SUM(quantity) AS total_order_quantity 
   FROM furniture.df_orders
@@ -280,14 +280,14 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   ORDER BY total_order_quantity DESC;
   ```
 - **Geographical Insights**
-  Which cities and states have the highest sales?
+  11. Which cities and states have the highest sales?
   ```sql
   SELECT state, city, SUM(total_sale) AS total_sales
   FROM furniture.df_orders
   GROUP BY state, city;
   ```
 - **Discount Effectiveness**
-  How do different levels of discount affect sales volume?
+  12. How do different levels of discount affect sales volume?
   ````sql
   SELECT discount_percent, SUM(total_sale) AS total_sales
   FROM furniture.df_orders
