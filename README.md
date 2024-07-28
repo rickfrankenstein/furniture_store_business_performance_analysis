@@ -131,3 +131,63 @@ Data cleaning is a crucial step in the data analysis process. It involves identi
    df.dtypes
    df.head(5)
    ```
+## 4. Data Uploading 
+
+Once the data is cleaned, the next step is to upload it into a MySQL database for further analysis using SQL. I have used the SQLAlchemy library to facilitate this process.
+
+### Steps for Data Uploading
+
+1. **Install SQLAlchemy and MySQL Connector**: Ensure you have the necessary libraries installed.
+   ```python
+   !pip install sqlalchemy pymysql mysqlclient
+   ```
+4. **Define the Database Connection String**: Create a connection string to connect to your MySQL database.
+   ```python
+   import sqlalchemy as sal
+   import pandas as pd
+   username = 'root'
+   password = 'Abhi%401999'
+   host = 'localhost'
+   database = 'furniture'
+   connection_string = f'mysql+pymysql://{username}:{password}@{host}/{database}'
+   engine = sal.create_engine(connection_string)
+   conn = engine.connect()
+   ```
+6. **Create a MySQL Database**: Set up a MySQL database to store your data.
+   ```python
+   from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, DECIMAL, Date
+   metadata = MetaData()
+   furniture_table = Table(
+       'df_orders', metadata,
+       Column('order_id', Integer, primary_key=True),
+       Column('order_date', Date),
+       Column('ship_mode', String(20)),
+       Column('segment', String(20)),
+       Column('country', String(20)),
+       Column('city', String(20)),
+       Column('state', String(20)),
+       Column('postal_code', String(20)),
+       Column('region', String(20)),
+       Column('category', String(20)),
+       Column('sub_category', String(20)),
+       Column('product_id', String(50)),
+       Column('cost_price', Integer),
+       Column('list_price', Integer),
+       Column('quantity', Integer),
+       Column('discount_percent', Integer),
+       Column('discount', DECIMAL(7,2)),
+       Column('sale_price', DECIMAL(7,2)),
+       Column('profit', DECIMAL(7,2)),
+       Column('total_sale', DECIMAL(10,2)),
+       Column('total_profit', DECIMAL(10,2))
+   )
+   metadata.create_all(engine)
+
+   print("Table  created successfully.")
+   ```
+8. **Upload DataFrame to MySQL**: Use SQLAlchemy to upload the cleaned DataFrame to the MySQL database.
+   ```python
+   df.to_sql('df_orders', con=conn , index=False, if_exists = 'append')
+   ```
+
+
