@@ -35,3 +35,19 @@ The dataset used for this analysis is sourced from Kaggle, a platform known for 
 - **Data Visualization**: Power BI
 
 By leveraging these tools and technologies, we have conducted a thorough analysis to uncover valuable insights that can drive business growth and enhance customer satisfaction.
+## 2. Data Collection and Dataset
+
+### Data Collection
+To gather the necessary data for this analysis, we utilized the Kaggle API. The dataset was downloaded directly into a Jupyter Notebook, ensuring an efficient and automated data collection process.
+
+#### Steps for Data Collection
+1. **Authenticate with Kaggle API**: Authenticate using the Kaggle API key to gain access to the datasets.
+   ### ```python
+   #importing required kaggle data from using kaggle API and auth token.
+import kaggle
+
+!kaggle datasets download ankitbansal06/retail-orders -f orders.csv
+  
+2. **Download Dataset**: Use the Kaggle API to download the dataset.
+3. **Unzip Dataset**: Unzip the downloaded dataset for further processing.
+
