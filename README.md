@@ -293,3 +293,5 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   FROM furniture.df_orders
   GROUP BY discount_percent
   ```
+### Results and Inssights
+By performing these SQL queries, we gained valuable insights into the store's operations, sales patterns, profitability, customer behavior, and market trends. These insights can be leveraged to make data-driven decisions, optimize strategies, and improve overall business performance.
