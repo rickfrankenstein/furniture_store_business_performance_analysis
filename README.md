@@ -146,7 +146,7 @@ Once the data is cleaned, the next step is to upload it into a MySQL database fo
    import sqlalchemy as sal
    import pandas as pd
    username = 'root'
-   password = 'Abhi%401999'
+   password = '**********'
    host = 'localhost'
    database = 'furniture'
    connection_string = f'mysql+pymysql://{username}:{password}@{host}/{database}'
