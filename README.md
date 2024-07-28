@@ -42,16 +42,19 @@ To gather the necessary data for this analysis, we utilized the Kaggle API. The 
 
 #### Steps for Data Collection
 1. **Authenticate with Kaggle API**: Authenticate using the Kaggle API key to gain access to the datasets.
-   ### Code Example
-
-```python
-import pandas as pd
-
-# Load dataset
-df = pd.read_csv('data/sales_data.csv')
-print(df.head())
-
-```  
 2. **Download Dataset**: Use the Kaggle API to download the dataset.
+   ```python
+   #importing required kaggle data from using kaggle API and auth token.
+   import kaggle
+
+   !kaggle datasets download ankitbansal06/retail-orders -f orders.csv
+   ```
 3. **Unzip Dataset**: Unzip the downloaded dataset for further processing.
+   ```python
+   #extract file from zip file
+   import zipfile
+   zip_ref = zipfile.ZipFile('orders.csv.zip') 
+   zip_ref.extractall() # extract file to dir
+   zip_ref.close() # close file
+   ```
 
