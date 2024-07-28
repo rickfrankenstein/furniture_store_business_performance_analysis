@@ -293,5 +293,37 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   FROM furniture.df_orders
   GROUP BY discount_percent
   ```
-### Results and Inssights
+### Results and Insights
 By performing these SQL queries, we gained valuable insights into the store's operations, sales patterns, profitability, customer behavior, and market trends. These insights can be leveraged to make data-driven decisions, optimize strategies, and improve overall business performance.
+## 6. Loading Data into Power BI for Visualization
+After performing exploratory data analysis (EDA) in MySQL Workbench, the next step is to visualize the insights using Power BI. Power BI is a powerful data visualization tool that allows you to create interactive dashboards and reports.
+
+### Steps for Loading Data into Power BI
+-Connect to MySQL Database with ODBC Driver
+-Import Data into Power BI
+-Design Interactive Dashboards
+-Step 1: Connect to MySQL Database with ODBC Driver
+To load data directly from MySQL into Power BI, you can use the ODBC driver:
+Ensure the MySQL ODBC driver is installed on your machine. You can download it from the MySQL website.
+Configure an ODBC Data Source:
+Open the ODBC Data Source Administrator on your computer.
+Click on "Add" to create a new Data Source Name (DSN).
+Select the MySQL ODBC driver from the list.
+Fill in the details for your MySQL database (e.g., server, user, password, and database name).
+Test the connection to ensure it works properly.
+-Step 2: Import Data into Power BI
+Open Power BI Desktop.
+Click on "Get Data" in the Home ribbon.
+Select "ODBC" from the list of data sources.
+Choose the DSN you configured for your MySQL database.
+Authenticate with your credentials if prompted.
+Select the tables you want to import and load them into Power BI.
+-Step 3: Create Relationships (if necessary)
+If your dataset consists of multiple tables, ensure to define relationships between them:
+
+Go to the "Model" view in Power BI.
+Drag and drop fields to create relationships between tables based on common columns (e.g., order_id).
+-Step 4: Design Interactive Dashboards
+Create Visuals: Use different visualizations like bar charts, line charts, pie charts, and tables to represent the data.
+Filter Data: Add slicers to filter data based on dimensions like region, segment, or time period.
+Customize: Customize visuals with colors, labels, and titles to enhance readability.
