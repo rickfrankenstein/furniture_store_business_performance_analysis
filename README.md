@@ -57,4 +57,27 @@ To gather the necessary data for this analysis, we utilized the Kaggle API. The 
    zip_ref.extractall() # extract file to dir
    zip_ref.close() # close file
    ```
+### Dataset Overview
+
+The dataset consists of sales and customer data from a USA-based furniture store, covering the years 2022 and 2023. This data includes various features that provide detailed information on sales transactions, customer segments, product categories, and more.
+#### Schema of the Dataset
+
+| Column Name       | Data Type |
+|-------------------|-----------|
+| Order Id          | integer   |
+| Order Date        | string    |
+| Ship Mode         | string    |
+| Segment           | string    |
+| Cuntry            | string    |
+| City              | string    |
+| State             | string    |
+| Postal Code       | integer   |
+| Region            | string    |
+| Category          | string    |
+| Sub Category      | string    |
+| Product Id        | string    |
+| Cost Price        | integer   |
+| List Price        | integer   |
+| Quantity          | integer   |
+| Discount Percent  | integer   |
 
