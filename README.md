@@ -91,3 +91,43 @@ The dataset consists of sales and customer data from a USA-based furniture store
 
 This dataset provides a comprehensive view of the store's operations, enabling detailed analysis and insights into various aspects of business performance.
 
+## 3. Data Cleaning
+
+Data cleaning is a crucial step in the data analysis process. It involves identifying and correcting errors, handling missing values, and transforming data into a suitable format for analysis. In this project, the Pandas library in Python was used for data cleaning.
+
+### Steps in Data Cleaning
+
+1. **Load the Dataset**: 
+   ```python
+   #importing pandas library
+   import pandas as pd
+   #importing orders.csv, converting 'Not Available' & 'unknown' to 'nan' by default
+   df = pd.read_csv('orders.csv',na_values = ['Not Available', 'unknown'])
+   ```
+2. **Checking for Unique Values**:
+   ```python
+   #Which unique values 'Ship Mode' column has
+   df['Ship Mode'].unique()
+   ```
+3. **Cleaning Column Names**:
+   ```python
+   #Changing all column names to lowercase
+   df.columns = df.columns.str.lower()
+   #df.columns
+   #Replacing spaces in column names to underscore
+   df.columns = df.columns.str.replace(" ", "_")
+   ```
+4. **Deriving New Columns Required for Analysis**
+   ```python
+   #derive new columns discount, sale price, profit
+   df['discount'] = df['list_price']*(df['discount_percent']/100)
+   df['sale_price'] = df['list_price']-df['discount']
+   df['profit'] = df['sale_price'] - df['cost_price']
+   df['total_sale'] = df['sale_price']*df['quantity'] 
+   df['total_profit'] = df['profit']*df['quantity']
+   ```
+5. **Displaying Cleaned DataFrame**
+   ```python
+   df.dtypes
+   df.head(5)
+   ```
