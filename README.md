@@ -205,3 +205,91 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   ```
   ![Sales over diff months](images/monthly_sales.png)
    
+  Which regions have the highest and lowest sales?
+  ```sql
+  SELECT region, SUM(total_sale) AS total_sales
+  FROM furniture.df_orders
+  GROUP BY region
+  ORDER BY total_sales DESC
+  LIMIT 1;
+  ```
+  ```sql
+  SELECT region, SUM(revenue) AS total_sales
+  FROM furniture.df_orders
+  GROUP BY region
+  ORDER BY total_sales 
+  LIMIT 1;
+  ```
+  How do sales vary by ship mode and segment?
+  ```sql
+  SELECT ship_mode, segment, SUM(revenue) AS sales
+  FROM furniture.df_orders
+  WHERE ship_mode IS NOT NULL AND segment IS NOT NULL
+  GROUP BY ship_mode, segment
+  ORDER BY ship_mode;
+  ```
+- **Profitability Analysis**
+  Which regions are the most and least profitable?
+  ```sql
+  SELECT region, SUM(gross_profit) total_profit
+  FROM furniture.df_orders
+  GROUP BY region;
+  ```
+  What is the impact of discounts on profit margins?
+  ```sql
+  SELECT discount, AVG(profit / (sale_price * quantity)) AS avg_profit_margin
+  FROM furniture.df_orders
+  GROUP BY discount
+  ORDER BY discount;
+  ```
+- **Customer Insights**
+  Which customer segments generate the most revenue?
+  ```sql
+  SELECT segment, SUM(total_sale) AS total_revenue
+  FROM furniture.df_orders
+  GROUP BY segment;
+  ```
+  How does the average order size and frequency of orders vary across different segments?
+  ```sql
+  SELECT segment, AVG(quantity) AS avg_order_size, COUNT(order_id) AS order_count
+  FROM your_table_name
+  GROUP BY segment
+  ORDER BY order_count DESC;
+  ```
+- **Market Trends**
+  What are the trends in sales and profit over time?
+  ```sql
+  SELECT  DATE_FORMAT(order_date, "%Y %m") AS month, SUM(total_sale) AS sales, SUM(profit) AS profit
+  FROM furniture.df_orders
+  GROUP BY month
+  ORDER BY month;
+  ```
+  Are there seasonal variations in sales and profitability?
+  ```sql
+  SELECT MONTH(order_date) AS month, SUM(total_sale) AS sales, SUM(total_profit) AS profit
+  FROM furniture.df_orders
+  GROUP BY month
+  ORDER BY month;
+  ```
+- **Inventory and Supply Chain**
+  Which Sub-category have the highest and lowest order quantities?
+  ```sql
+  SELECT sub_category, SUM(quantity) AS total_order_quantity 
+  FROM furniture.df_orders
+  GROUP BY sub_category
+  ORDER BY total_order_quantity DESC;
+  ```
+- **Geographical Insights**
+  Which cities and states have the highest sales?
+  ```sql
+  SELECT state, city, SUM(total_sale) AS total_sales
+  FROM furniture.df_orders
+  GROUP BY state, city;
+  ```
+- **Discount Effectiveness**
+  How do different levels of discount affect sales volume?
+  ````sql
+  SELECT discount_percent, SUM(total_sale) AS total_sales
+  FROM furniture.df_orders
+  GROUP BY discount_percent
+  ```
