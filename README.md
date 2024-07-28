@@ -80,4 +80,14 @@ The dataset consists of sales and customer data from a USA-based furniture store
 | List Price        | integer   |
 | Quantity          | integer   |
 | Discount Percent  | integer   |
+#### Key Features
+
+- **Order Details**: Information about each order, including order ID, date, and ship mode.
+- **Customer Segmentation**: Data on customer segments, helping to identify and analyze different customer groups.
+- **Geographical Data**: Includes details on country, city, state, and region.
+- **Product Information**: Details on product categories and sub-categories.
+- **Pricing and Discounts**: Information on cost price, list price, discounts, and sale price.
+- **Sales and Profit**: Data on sales amount, profit, and other financial metrics.
+
+This dataset provides a comprehensive view of the store's operations, enabling detailed analysis and insights into various aspects of business performance.
 
