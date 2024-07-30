@@ -203,7 +203,6 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   GROUP BY month
   ORDER BY month;
   ```
-  ![Sales over diff months](images/monthly_sales.png)
    
   2. Which regions have the highest and lowest sales?
   ```sql
@@ -295,36 +294,35 @@ Exploratory Data Analysis (EDA) is a crucial step to understand the underlying p
   ```
 ### Results and Insights
 By performing these SQL queries, we gained valuable insights into the store's operations, sales patterns, profitability, customer behavior, and market trends. These insights can be leveraged to make data-driven decisions, optimize strategies, and improve overall business performance.
-## 6. Loading Data into Power BI for Visualization
+## 6. Visualizations in Power BI
 
-After performing exploratory data analysis (EDA) in MySQL Workbench, the next step is to visualize the insights using Power BI. Power BI is a powerful data visualization tool that allows you to create interactive dashboards and reports.
+The following visualizations provide a comprehensive analysis of sales data and business performance. Each chart is designed to highlight different aspects of the dataset, offering insights into revenue trends, sales performance, and more.
 
-### Steps for Loading Data into Power BI
+### Visualizations
 
-#### Step 1: Connect to MySQL Database with ODBC Driver
-To load data directly from MySQL into Power BI, you can use the ODBC driver:
+- **Revenue and Profit Trends (Line Graph with Multiple Y-Axis):**
+  This line graph displays how revenue and profit change over time. Separate y-axes are used for each metric to handle different scales effectively, allowing for a clear view of trends in both revenue and profit.
+  
+- **Top Selling Categories and Subcategories (Funnel Chart):**
+  The funnel chart illustrates the hierarchical flow of sales through various categories and subcategories. It shows how sales diminish as you move from top-level categories to more detailed subcategories.
+  
+- **Sales Performance by Region (Map Chart):**
+  A map chart visualizes sales data geographically. It helps in understanding variations in sales performance across different regions, providing a spatial representation of sales distribution.
+  
+- **Revenue and Profit by Region (Clustered Column Chart):**
+  This clustered column chart compares revenue and profit across regions side-by-side. It facilitates easy comparison of these metrics and highlights performance differences between regions.
+  
+- **Sales by Ship Mode and Segment (Clustered Column Chart):**
+  The clustered column chart compares sales performance across different ship modes and customer segments. It helps in identifying trends and variations in sales related to shipping methods and customer segments.
+  
+- **Discount by Sale Price (Scatter Plot):**
+  This scatter plot explores the relationship between discount percentages and sale prices. It is useful for identifying patterns or anomalies in how discounts impact sale prices.
+  
+- **Discount by Profit Margin (Scatter Plot):**
+  A scatter plot showing the relationship between discounts and profit margins. This visualization helps in understanding how varying discount levels affect profitability.
+  
+- **Average Order Size and Number of Orders (Combo of Column and Line Chart):**
+  The combo chart displays trends in both average order size and the number of orders over time. Columns represent average order size, while a line tracks the number of orders, providing a combined view of these two metrics.
 
-1. **Install MySQL ODBC Driver:** Ensure the MySQL ODBC driver is installed on your machine. You can download it from the [MySQL website](https://dev.mysql.com/downloads/connector/odbc/).
-2. **Configure an ODBC Data Source:**
-   - Open the ODBC Data Source Administrator on your computer.
-   - Click on "Add" to create a new Data Source Name (DSN).
-   - Select the MySQL ODBC driver from the list.
-   - Fill in the details for your MySQL database (e.g., server, user, password, and database name).
-   - Test the connection to ensure it works properly.
+These visualizations offer valuable insights into different dimensions of business performance, aiding in data-driven decision-making and strategic planning.
 
-#### Step 2: Import Data into Power BI
-1. Open Power BI Desktop.
-2. Click on "Get Data" in the Home ribbon.
-3. Select "ODBC" from the list of data sources.
-4. Choose the DSN you configured for your MySQL database.
-5. Authenticate with your credentials if prompted.
-6. Select the tables you want to import and load them into Power BI.
-
-
-
-#### Step 3: Design Interactive Dashboards
-1. **Create Visuals:** Use different visualizations like bar charts, line charts, pie charts, and tables to represent the data.
-2. **Filter Data:** Add slicers to filter data based on dimensions like region, segment, or time period.
-3. **Customize:** Customize visuals with colors, labels, and titles to enhance readability.
-
-By following these steps, you can effectively load your data into Power BI and create interactive dashboards that provide valuable insights and drive informed business decisions.
